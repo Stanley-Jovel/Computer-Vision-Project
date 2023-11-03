@@ -1,3 +1,5 @@
 numpy
 pydub
 python-dotenv
+matplotlib
+librosa
