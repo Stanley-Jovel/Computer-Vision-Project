@@ -3,3 +3,7 @@ Questions.
 - randomness about my samples between team members
 - naming convention and storage of my samples? 0 vs 1
 - I'm getting closer to start training, Will my spectrograms be good enough?
+
+randomly choose a non gun sound
+find long backgorund sounds (airport, mall, park) and splice them to get many inputs
+labels.txt
