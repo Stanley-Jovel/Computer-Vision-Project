@@ -14,13 +14,6 @@
 
 `pip install -r requirements.txt`
 
-4. Rename the file `.env.example` to `.env`. Replace the default values from the variables with the absolute paths to the folders where the audio files will be stored in your local set up. The folders you need to specify are: 
-```
-BACKGROUND_FOLDER = '/path/to/backgroundSounds'
-GUNSHOT_FOLDER = '/path/to/gunshotSounds'
-OUTPUT_FOLDER = '/path/to/outputSounds'
-```
-
 # insert_gunshots_into_backgrounds.ipynb
 
 This notebook is used to insert gunshots into background sounds. 
