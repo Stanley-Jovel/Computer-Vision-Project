@@ -1,6 +1,3 @@
-# TODO
-- Files in test with sounds similar to gunshots
-
 # Get Started
 1. Create a virtual environment
 
@@ -18,22 +15,25 @@
 
 This notebook is used to insert gunshots into background sounds. 
 
-First the background sounds are loaded from the `BACKGROUND_FOLDER`. Then each background is split into 10 second segments (or windows).
+First the background sounds are loaded from `/repo_dir/input/background`. Then each background is split into 10 second segments (or windows).
 
-For each window, a gunshot from `GUNSHOT_FOLDER` is inserted at a random position. A given window has one gunshot from three different volume variations: `10%`, `50%` and `100%` volume.
+For each window, a gunshot from `/repo_dir/input/gushot` is inserted at a random position. A given window has one gunshot from three different volume variations: `8%`, `35%` and `70%` volume. There is a 20% chance that a window will have a non-gunshot inserted instead of a gunshot.
 
-Gunshot sounds are always picked at random (for now at least. We may want to change this later).
+Gunshot (or non-gunshot) sounds are always picked at random (for now at least. We may want to change this later).
 
-The output sounds are saved in `{OUTPUT_FOLDER}/audio`. Spectrograms are saved in `{OUTPUT_FOLDER}/spectrograms`.
+The output spectrograms are saved in `/repo_dir/output/spectrograms`.
+
+Classification labels are stored in `/repo_dir/output/labels.csv`, which is a CSV file with the following columns: 
+`file_name,label`.
+We can load this file using a custom `torch.utils.data.Dataset` class, and use it to create a dataloader for training.
 
 Output filenames are of the form: 
 
-`{backgroundName}_window={index}_vol={volumeLevel}_gun={gunshotName | 'none'}.wav`
+`{backgroundName}_window={index}_vol={volumeLevel}_gun={0|1}.mp3`
 
 Examples:
 
 ```
-park_window=7_vol=10%_gun=Deset-Eagle.mp3
-crowd_window=1_vol=50%_gun=none.mp3
-constructionSite_window=3_vol=100%_gun=M249_6.mp3
+park_window=7_vol=10%_gun=1.mp3
+crowd_window=1_vol=50%_gun=0.mp3
 ```
