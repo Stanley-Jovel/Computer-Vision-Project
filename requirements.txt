@@ -1,5 +1,5 @@
 numpy
 pydub
-python-dotenv
 matplotlib
 librosa
+pandas
