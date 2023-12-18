@@ -11,15 +11,14 @@
 
 `pip install -r requirements.txt`
 
-# insert_gunshots_into_backgrounds.ipynb
-
-This notebook is used to insert gunshots into background sounds. 
+# Generate Spectrograms
+The notebook `Generate_Spectrograms.ipynb` is used to insert gunshots into background sounds.
 
 First the background sounds are loaded from `/repo_dir/input/background`. Then each background is split into 10 second segments (or windows).
 
 For each window, a gunshot from `/repo_dir/input/gushot` is inserted at a random position. A given window has one gunshot from three different volume variations: `8%`, `35%` and `70%` volume. There is a 20% chance that a window will have a non-gunshot inserted instead of a gunshot.
 
-Gunshot (or non-gunshot) sounds are always picked at random (for now at least. We may want to change this later).
+Gunshot (or non-gunshot) sounds are always picked at random.
 
 The output spectrograms are saved in `/repo_dir/output/spectrograms`.
 
@@ -29,11 +28,14 @@ We can load this file using a custom `torch.utils.data.Dataset` class, and use i
 
 Output filenames are of the form: 
 
-`{backgroundName}_window={index}_vol={volumeLevel}_gun={0|1}.mp3`
+`{backgroundName}_window={index}_vol={volumeLevel}_gun={0|1}.png`
 
 Examples:
 
 ```
-park_window=7_vol=10%_gun=1.mp3
-crowd_window=1_vol=50%_gun=0.mp3
+park_window=7_vol=10%_gun=1.png
+crowd_window=1_vol=50%_gun=0.png
 ```
+
+# Train Models
+The notebook `Train_Models.ipynb` is used to train models.
