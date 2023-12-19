@@ -39,3 +39,4 @@ crowd_window=1_vol=50%_gun=0.png
 
 # Train Models
 The notebook `Train_Models.ipynb` is used to train models.
+`Double_Head_EffNetV2_Training.ipynb` has the dual headed Effnet model and training scripts.
